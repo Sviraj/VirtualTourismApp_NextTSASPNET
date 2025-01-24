@@ -1,5 +1,6 @@
 import React, { forwardRef } from "react";
 import styles from "../styles/VideoGallery.module.css";
+import router from "next/router";
 
 // Define the Video type
 interface Video {
@@ -90,32 +91,42 @@ const videos: Video[] = [
 ];
 
 // VideoGallery component with TypeScript support
-const VideoGallery = forwardRef<HTMLDivElement, VideoGalleryProps>((props, ref) => {
-  return (
-    <div ref={ref}>
-      <div className={styles["video-gallery-container"]}>
-        <h1 className={styles["gallery-title"]}>360° Video</h1>
-        <div className={styles["video-gallery"]}>
-          {videos.map((video, index) => (
-            <div className={styles["video-card"]} key={index}>
-              <img
-                src={video.image}
-                alt={video.title}
-                className={styles["video-image"]}
-              />
-              <div className={styles["video-info"]}>
-                <h3>{video.title}</h3>
-                <p>{`Views: ${video.views}`}</p>
+const VideoGallery = forwardRef<HTMLDivElement, VideoGalleryProps>(
+  (props, ref) => {
+    return (
+      <div ref={ref}>
+        <div className={styles["video-gallery-container"]}>
+          <h1 className={styles["gallery-title"]}>360° Video</h1>
+          <div className={styles["video-gallery"]}>
+            {videos.map((video, index) => (
+              <div
+                className={styles["video-card"]}
+                key={index}
+                onClick={() =>
+                  router.push({
+                    pathname: "/video-viewer"
+                  })
+                }
+              >
+                <img
+                  src={video.image}
+                  alt={video.title}
+                  className={styles["video-image"]}
+                />
+                <div className={styles["video-info"]}>
+                  <h3>{video.title}</h3>
+                  <p>{`Views: ${video.views}`}</p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-        <div className={styles["see-all-button"]}>
-          <button>See all 360° Video (514)</button>
+            ))}
+          </div>
+          <div className={styles["see-all-button"]}>
+            <button>See all 360° Video (514)</button>
+          </div>
         </div>
       </div>
-    </div>
-  );
-});
+    );
+  }
+);
 
 export default VideoGallery;
