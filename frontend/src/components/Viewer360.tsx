@@ -10,7 +10,7 @@ import {
   Play,
   Pause,
 } from "lucide-react";
-import styles from "../styles/Viewer360.module.css";
+import styles from "../styles/Image360Viewer.module.css";
 
 interface Viewer360Props {
   imageUrl: string;
