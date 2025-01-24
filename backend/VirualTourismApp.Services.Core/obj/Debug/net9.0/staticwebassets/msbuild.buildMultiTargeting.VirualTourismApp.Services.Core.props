@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\VirualTourismApp.Services.Core.props" />
+</Project>

@@ -1,0 +1,6 @@
+@VirualTourismApp.Services.Core_HostAddress = http://localhost:5053
+
+GET {{VirualTourismApp.Services.Core_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

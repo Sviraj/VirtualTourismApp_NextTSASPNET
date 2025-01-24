@@ -1,0 +1,11 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "VirualTourismApp.Services.Core\\VirualTourismApp.Services.Core.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

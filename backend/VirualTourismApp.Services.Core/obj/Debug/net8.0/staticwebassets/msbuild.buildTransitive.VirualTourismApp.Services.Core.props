@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\VirualTourismApp.Services.Core.props" />
+</Project>

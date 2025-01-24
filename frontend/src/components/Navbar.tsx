@@ -1,0 +1,102 @@
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import Image from "next/image";
+import profileImage from "../images/profile.png";
+import styles from "../styles/Navbar.module.css";
+
+interface NavbarProps {
+  onPhotoClick: () => void;
+  onVideoClick: () => void;
+  onPhotoGalleryClick: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({
+  onPhotoClick,
+  onVideoClick,
+  onPhotoGalleryClick,
+}) => {
+  const router = useRouter();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const authtoken = localStorage.getItem("authToken");
+    if (authtoken || token) {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("token");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("tokenExpiration");
+    setIsAuthenticated(false);
+    router.push("/");
+  };
+
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
+
+  return (
+    <nav className={styles["navbar"]}>
+      <div className={styles["navbar-logo"]}>
+        <h2>Virtual-Tourism</h2>
+      </div>
+
+      <ul className={styles["navbar-links"]}>
+        <li>
+          <button className={styles["navigation-btn"]} onClick={onPhotoClick}>
+            360 Photo
+          </button>
+        </li>
+        <li>
+          <button className={styles["navigation-btn"]} onClick={onVideoClick}>
+            360 Video
+          </button>
+        </li>
+        <li>
+          <button
+            className={styles["navigation-btn"]}
+            onClick={onPhotoGalleryClick}
+          >
+            Photogallery
+          </button>
+        </li>
+      </ul>
+
+      <div className={styles["profile-section"]}>
+        {!isAuthenticated ? (
+          <button
+            className={styles["sign-in-btn"]}
+            onClick={() => router.push("/login")}
+          >
+            Sign In
+          </button>
+        ) : (
+          <>
+            <Image
+              src={profileImage}
+              alt="Profile"
+              className={styles["profile-icon"]}
+              onClick={toggleDropdown}
+            />
+            {showDropdown && (
+              <div className={styles["dropdown-menu"]}>
+                <li onClick={() => router.push("/profile")}>Account</li>
+                <li onClick={() => router.push("/subscriptionPlans")}>
+                  Upgrade Plans
+                </li>
+                <li onClick={handleLogout}>Logout</li>
+              </div>
+            )}
+          </>
+        )}
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
