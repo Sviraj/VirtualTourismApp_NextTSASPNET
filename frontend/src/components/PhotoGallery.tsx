@@ -15,7 +15,6 @@ interface PhotoGalleryProps {
 }
 
 const PhotoGallery = forwardRef<HTMLDivElement, PhotoGalleryProps>((_, ref) => {
-  //const navigate = useNavigate();
   const router = useRouter();
   const [photos] = useState<Photo[]>([
     {
