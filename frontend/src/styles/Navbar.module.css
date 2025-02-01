@@ -1,16 +1,21 @@
 .navbar {
   display: flex;
-  z-index: 500; /* Higher than Carousel's z-index */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* With border-box applied globally, padding is included in the width */
+  z-index: 400; /* Lower than dropdown's z-index */
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #ebd9d9;
+  background-color: rgba(72, 110, 223, 0.8); /* 80% opaque */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 .navbar-logo h2 {
   font-size: 24px;
-  color: #0070f3;
+  color: #f9f9f9;
 }
 
 .navbar-links {
@@ -48,6 +53,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  margin-right: 35px;
 }
 
 .dropdown-menu {
