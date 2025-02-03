@@ -55,7 +55,7 @@ const PhotoGallery = forwardRef<HTMLDivElement, PhotoGalleryProps>((_, ref) => {
     },
     {
       id: 6,
-      title: "Sahara Desert, Algeria. Part I",
+      title: "Sahara Desert, Argentina. Part I",
       views: "138,213",
       imageUrl:
         "https://as2.ftcdn.net/v2/jpg/05/00/13/57/1000_F_500135749_Cl1dMNuH7DpSP7kDaHQxIpeQqo8w5n0E.jpg",
