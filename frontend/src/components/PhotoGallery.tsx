@@ -17,6 +17,10 @@ interface PhotoGalleryProps {
 const PhotoGallery = forwardRef<HTMLDivElement, PhotoGalleryProps>((_, ref) => {
   const router = useRouter();
   const [numberOfPhotos, setNumberOfPhotos] = useState<number>(513);
+
+  const handleClick = () => {
+    setNumberOfPhotos(numberOfPhotos + 1);
+  }
   const [photos] = useState<Photo[]>([
     {
       id: 1,
@@ -112,7 +116,7 @@ const PhotoGallery = forwardRef<HTMLDivElement, PhotoGalleryProps>((_, ref) => {
           ))}
         </div>
         <div className={styles["see-all-button"]}>
-          <button>See all 360° Photo ({numberOfPhotos})</button>
+          <button onClick={handleClick}>See all 360° Photo ({numberOfPhotos})</button>
         </div>
       </div>
     </div>

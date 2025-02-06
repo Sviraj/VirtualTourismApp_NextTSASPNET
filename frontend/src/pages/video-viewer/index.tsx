@@ -1,5 +1,5 @@
 import React from "react";
-import Video360Viewer from "../../components/Video360Viewer";
+// import Video360Viewer from "../../components/Video360Viewer";
 
 
 const VideoViewerPage: React.FC = () => {
