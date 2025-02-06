@@ -3,6 +3,8 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import profileImage from "../images/profile.png";
 import styles from "../styles/Navbar.module.css";
+import TypingLoop from "./Typingloop";
+
 
 interface NavbarProps {
   onPhotoClick: () => void;
@@ -43,7 +45,9 @@ const Navbar: React.FC<NavbarProps> = ({
   return (
     <nav className={styles["navbar"]}>
       <div className={styles["navbar-logo"]}>
-        <h2>Virtual-Tourism</h2>
+        <div>
+          <TypingLoop text="Virtual-Tourism" speed={400} />
+        </div>
       </div>
 
       <ul className={styles["navbar-links"]}>
