@@ -5,13 +5,14 @@ const TypingLoop: React.FC<{ text: string; speed?: number }> = ({ text, speed = 
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setDisplayedText((prev) => text.slice(0, (index % (text.length + 1))));
-      setIndex((prev) => (prev + 1) % (text.length + 1));
+    const timeout = setTimeout(() => {
+      setDisplayedText(text.slice(0, index)); // Show characters up to `index`
+      setIndex((prev) => (prev + 1) % (text.length + 1)); // Increment index
     }, speed);
-
-    return () => clearInterval(interval);
+  
+    return () => clearTimeout(timeout); // Cleanup previous timeout
   }, [index, text, speed]);
+  
 
   return <span>{displayedText}</span>;
 };
