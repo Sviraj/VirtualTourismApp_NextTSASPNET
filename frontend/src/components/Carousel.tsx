@@ -6,16 +6,20 @@ import React, {
   MouseEvent,
 } from "react";
 import styles from "../styles/Carousel.module.css";
+import Image from "next/image";
 
 interface CarouselProps {
-  images: string[];
   autoPlayInterval?: number;
 }
 
-const Carousel: React.FC<CarouselProps> = ({
-  images,
-  autoPlayInterval = 3000,
-}) => {
+const Carousel: React.FC<CarouselProps> = ({ autoPlayInterval = 3000 }) => {
+  
+  const [images, setCarouselPhotos] = useState<string[]>([
+    "https://images.unsplash.com/photo-1499336315816-097655dcfbda?q=80&w=2447&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1501082183835-b7b33db89c3f?q=80&w=2320&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1706984193600-dfcd49077c87?q=80&w=2305&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  ]);
+
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [isAutoPlaying, setIsAutoPlaying] = useState<boolean>(true);
@@ -68,11 +72,11 @@ const Carousel: React.FC<CarouselProps> = ({
     setIsAutoPlaying(true);
   };
 
-  const handleMouseEnter = (e: MouseEvent<HTMLDivElement>) => {
+  const handleMouseEnter = () => {
     setIsAutoPlaying(false);
   };
 
-  const handleMouseLeave = (e: MouseEvent<HTMLDivElement>) => {
+  const handleMouseLeave = () => {
     setIsAutoPlaying(true);
   };
 
@@ -95,10 +99,15 @@ const Carousel: React.FC<CarouselProps> = ({
         &#10094;
       </button>
       <div className={styles["carousel-image-container"]}>
-        <img
+        <Image
           src={images[currentIndex]}
           alt={`Slide ${currentIndex}`}
           className={styles["carousel-image"]}
+          width={800} // specify an appropriate width
+          height={400} // specify an appropriate height
+          // Alternatively, you can use layout="responsive" for fluid images
+          //layout="responsive"
+          //objectFit="cover" // or another value as needed
         />
       </div>
       <button
