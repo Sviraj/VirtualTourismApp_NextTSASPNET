@@ -170,4 +170,7 @@ const NormalPhotoGallery = forwardRef<HTMLDivElement>(
   }
 );
 
+// Set a display name for debugging purposes
+NormalPhotoGallery.displayName = "NormalPhotoGallery";
+
 export default NormalPhotoGallery;
