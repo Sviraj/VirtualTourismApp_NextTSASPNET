@@ -45,7 +45,6 @@ const Register: React.FC = () => {
 
       if (!response.ok) throw new Error("Registration failed or server error");
 
-      const data = await response.json();
       alert("Registration successful! Please log in.");
       router.push("/"); // Navigate to the home page
     } catch (error: any) {
