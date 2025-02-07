@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent, FormEvent } from "react";
 import { useRouter } from "next/router";
 import styles from "../../styles/Login.module.css";
 import API_CONFIG from "../api/apiConfig";
+import Link from "next/link";
 
 const Login: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -54,9 +55,13 @@ const Login: React.FC = () => {
       localStorage.setItem("tokenExpiration", expirationTime.toString());
 
       router.push("/"); // Navigate to the home page
-    } catch (error: any) {
+    } catch (error) {
       console.error("login error", error);
-      setError(error.message || "Login failed. Please try again.");
+      if (error instanceof Error) {
+        setError(error.message);
+      } else {
+        setError("Login failed. Please try again.");
+      }
     } finally {
       setIsLoading(false);
     }
@@ -101,16 +106,21 @@ const Login: React.FC = () => {
           />
         </div>
 
-        <a href="/forgot-password" className={styles["forgot-pw-link"]}>
-          Forgot Password?
-        </a>
+        <Link href="/forgot-password" className={styles["forgot-pw-link"]}>
+          Forget Password
+        </Link>
 
-        <button type="submit" className={styles["btn-primary"]} disabled={isLoading}>
+        <button
+          type="submit"
+          className={styles["btn-primary"]}
+          disabled={isLoading}
+        >
           {isLoading ? "Signing in..." : "Login"}
         </button>
 
         <p className={styles["login-link"]}>
-          Don't have an account? <a href="/register">Create Account</a>
+        Don&apos;t have an account?{" "}
+          <Link href="/register">Create Account</Link>
         </p>
 
         <div className={styles["divider"]}>OR</div>

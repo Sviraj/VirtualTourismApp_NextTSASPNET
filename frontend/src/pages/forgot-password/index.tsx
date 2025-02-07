@@ -16,9 +16,16 @@ const ForgotPassword: React.FC = () => {
 
       console.log("Forgot Password Response", response);
       setMessage("Password reset link has been sent to your email."); // Show success message
-    } catch (error: any) {
-      console.error("Forgot Password Error", error);
-      setMessage(error.response?.data || "Something went wrong."); // Show error message
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        // Now TypeScript knows error is an AxiosError
+        console.error("Forgot Password Error", error);
+        setMessage(error.response?.data || "Something went wrong.");
+      } else {
+        // Handle any non-Axios errors
+        console.error("Unexpected Error", error);
+        setMessage("Something went wrong.");
+      }
     }
   };
 

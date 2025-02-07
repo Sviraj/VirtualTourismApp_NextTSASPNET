@@ -123,4 +123,6 @@ const PhotoGallery = forwardRef<HTMLDivElement, PhotoGalleryProps>((_, ref) => {
   );
 });
 
+PhotoGallery.displayName = "PhotoGallery";
+
 export default PhotoGallery;
