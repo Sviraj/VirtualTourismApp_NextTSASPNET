@@ -23,7 +23,7 @@ const NormalPhotoViewer: React.FC = () => {
           className={styles["photo-viewer-image"]}
         />
         <div className={styles["hover-overlay"]}>
-          <p>Click "Back" to return</p>
+        <p>Click &quot;Back&quot; to return</p>
         </div>
       </div>
       <button

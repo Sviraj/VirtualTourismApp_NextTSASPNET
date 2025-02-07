@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import styles from "../../styles/Register.module.css";
+import Link from "next/link";
 
 const Register: React.FC = () => {
   const [username, setUsername] = useState<string>("");
@@ -47,7 +48,7 @@ const Register: React.FC = () => {
 
       alert("Registration successful! Please log in.");
       router.push("/"); // Navigate to the home page
-    } catch (error: any) {
+    } catch (error) {
       console.error("Registration error:", error);
       setError("Failed to register. Please try again.");
     }
@@ -90,7 +91,8 @@ const Register: React.FC = () => {
           Register
         </button>
         <p className={styles["login-link"]}>
-          Already have an account? <a href="/login">Login here</a>
+          Already have an account? 
+          <Link href="/login">Login here</Link>
         </p>
       </form>
     </div>

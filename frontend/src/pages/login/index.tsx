@@ -119,7 +119,7 @@ const Login: React.FC = () => {
         </button>
 
         <p className={styles["login-link"]}>
-          Don't have an account? 
+        Don&apos;t have an account?{" "}
           <Link href="/register">Create Account</Link>
         </p>
 

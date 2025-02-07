@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios, {AxiosError} from "axios";
+import axios from "axios";
 import styles from "../../styles/ForgetPassword.module.css"; // Import the CSS module
 
 const ForgotPassword: React.FC = () => {
