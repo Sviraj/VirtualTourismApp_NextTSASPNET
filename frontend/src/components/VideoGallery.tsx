@@ -9,11 +9,6 @@ interface Video {
   image: string;
 }
 
-// Define the props type
-interface VideoGalleryProps {
-  // Add any additional props you might need here
-}
-
 // Sample video data
 const videos: Video[] = [
   {
@@ -91,7 +86,7 @@ const videos: Video[] = [
 ];
 
 // VideoGallery component with TypeScript support
-const VideoGallery = forwardRef<HTMLDivElement, VideoGalleryProps>(
+const VideoGallery = forwardRef<HTMLDivElement>(
   (props, ref) => {
     return (
       <div ref={ref}>
@@ -128,5 +123,7 @@ const VideoGallery = forwardRef<HTMLDivElement, VideoGalleryProps>(
     );
   }
 );
+
+VideoGallery.displayName = "VideoGallery";
 
 export default VideoGallery;
