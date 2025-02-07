@@ -3,7 +3,6 @@ import React, {
   useEffect,
   useCallback,
   TouchEvent,
-  MouseEvent,
 } from "react";
 import styles from "../styles/Carousel.module.css";
 import Image from "next/image";
@@ -14,7 +13,7 @@ interface CarouselProps {
 
 const Carousel: React.FC<CarouselProps> = ({ autoPlayInterval = 3000 }) => {
   
-  const [images, setCarouselPhotos] = useState<string[]>([
+  const [images] = useState<string[]>([
     "https://images.unsplash.com/photo-1499336315816-097655dcfbda?q=80&w=2447&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "https://images.unsplash.com/photo-1501082183835-b7b33db89c3f?q=80&w=2320&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "https://images.unsplash.com/photo-1706984193600-dfcd49077c87?q=80&w=2305&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
