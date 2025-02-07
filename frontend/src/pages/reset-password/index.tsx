@@ -36,9 +36,17 @@ const ResetPassword: React.FC = () => {
       setTimeout(() => {
         router.push("/login");
       }, 5000);
-    } catch (error: any) {
-      console.error("Error:", error);
-      setMessage(error.response?.data || "Something went wrong.");
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        // Axios error
+        setMessage(error.response?.data || "An error occurred");
+      } else if (error instanceof Error) {
+        // General error
+        setMessage(error.message);
+      } else {
+        // Unknown error
+        setMessage("An unknown error occurred");
+      }
     }
   };
 
