@@ -5,17 +5,7 @@ import profileImage from "../images/profile.png";
 import styles from "../styles/Navbar.module.css";
 import TypingLoop from "./Typingloop";
 
-
-interface NavbarProps {
-  onPhotoClick: () => void;
-  onVideoClick: () => void;
-  onPhotoGalleryClick: () => void;
-}
-
-const Navbar: React.FC<NavbarProps> = ({
-  onPhotoClick,
-  onVideoClick,
-  onPhotoGalleryClick,
+const Navbar: React.FC = ({
 }) => {
   const router = useRouter();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -41,6 +31,16 @@ const Navbar: React.FC<NavbarProps> = ({
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
   };
+
+  const onPhotoClick = () => {
+    router.push("/image360page");
+  }
+  const onVideoClick = () => {
+    router.push("/video-viewer");
+  }
+  const onPhotoGalleryClick = () => {
+    router.push("/photo-gallery");
+  }
 
   return (
     <nav className={styles["navbar"]}>
