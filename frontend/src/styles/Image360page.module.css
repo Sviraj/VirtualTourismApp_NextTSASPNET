@@ -1,0 +1,15 @@
+.image360-container{
+    display: flex;
+    margin-top: 58px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+}
