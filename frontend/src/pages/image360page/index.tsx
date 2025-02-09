@@ -438,7 +438,7 @@ const ImagePage360: React.FC = () => {
         title: "Porto Katsiki beach, Lefkada, Greece",
         views: "11,384",
         imageUrl:
-          "https://as1.ftcdn.net/v2/jpg/03/22/88/26/1000_F_322882600_y6JbONLD7YLdRrU5LFQReuq8YUwasfgg.jpg",
+          "https://images.unsplash.com/photo-1505252772853-08ed4d526ceb?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
       {
         id: 5,
@@ -466,7 +466,7 @@ const ImagePage360: React.FC = () => {
         title: "Maldives Full Moon",
         views: "13,745",
         imageUrl:
-          "https://static.vecteezy.com/system/resources/previews/010/336/929/non_2x/full-seamless-spherical-hdri-panorama-360-degrees-angle-view-on-wooden-pier-near-lake-in-evening-in-equirectangular-projection-with-zenith-ready-vr-ar-virtual-reality-content-photo.jpg",
+          "https://images.unsplash.com/photo-1557971370-e7298ee473fb?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       },
     ]);
 
