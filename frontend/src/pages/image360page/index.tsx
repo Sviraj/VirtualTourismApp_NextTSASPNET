@@ -14,11 +14,6 @@ interface Photo {
 const ImagePage360: React.FC = () => {
 
   const router = useRouter();
-    const [numberOfPhotos, setNumberOfPhotos] = useState<number>(513);
-  
-    const handleClick = () => {
-      setNumberOfPhotos(numberOfPhotos + 1);
-    }
     const [photos] = useState<Photo[]>([
       {
         id: 1,
