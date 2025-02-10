@@ -11,6 +11,10 @@ const Navbar: React.FC = ({}) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
 
+  // Check if the current route is '/360image'
+  const is360ImageActive = router.pathname === "/image360page";
+  const is360VideoActive = router.pathname === "/video360page";
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     const authtoken = localStorage.getItem("authToken");
@@ -46,19 +50,29 @@ const Navbar: React.FC = ({}) => {
     <nav className={styles["navbar"]}>
       <div className={styles["navbar-logo"]} onClick={() => router.push("/")}>
         <Globe size={32} />
-        <div>
+        <div className={styles["navbar-title"]}>
           <TypingLoop text="Virtual-Tourism" speed={400} />
         </div>
       </div>
 
       <ul className={styles["navbar-links"]}>
         <li>
-          <button className={styles["navigation-btn"]} onClick={onPhotoClick}>
+          <button
+            className={`${styles["navigation-btn"]} ${
+              is360ImageActive ? styles["active"] : ""
+            }`}
+            onClick={onPhotoClick}
+          >
             360 Photo
           </button>
         </li>
         <li>
-          <button className={styles["navigation-btn"]} onClick={onVideoClick}>
+          <button
+            className={`${styles["navigation-btn"]} ${
+              is360VideoActive ? styles["active"] : ""
+            }`}
+            onClick={onVideoClick}
+          >
             360 Video
           </button>
         </li>

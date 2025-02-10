@@ -1,22 +1,16 @@
-import React, {
-  useState,
-  useEffect,
-  useCallback,
-  TouchEvent,
-} from "react";
+import React, { useState, useEffect, useCallback, TouchEvent } from "react";
 import styles from "../styles/Carousel.module.css";
-import Image from "next/image";
+import Viewer360 from "./Image360Viewer";
 
 interface CarouselProps {
   autoPlayInterval?: number;
 }
 
-const Carousel: React.FC<CarouselProps> = ({ autoPlayInterval = 3000 }) => {
-  
+const Carousel: React.FC<CarouselProps> = ({ autoPlayInterval = 5000 }) => {
   const [images] = useState<string[]>([
-    "https://images.unsplash.com/photo-1499336315816-097655dcfbda?q=80&w=2447&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1501082183835-b7b33db89c3f?q=80&w=2320&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1706984193600-dfcd49077c87?q=80&w=2305&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://as2.ftcdn.net/v2/jpg/05/00/13/57/1000_F_500135749_Cl1dMNuH7DpSP7kDaHQxIpeQqo8w5n0E.jpg",
+    "https://as1.ftcdn.net/v2/jpg/01/24/53/86/1000_F_124538688_amRnfhQENBJxMOoOfxP9nUaB3p0phHu7.jpg",
+    "https://as2.ftcdn.net/v2/jpg/02/86/08/85/1000_F_286088509_GZFeghJcoPjVCLotBR5AgDi3pf1Fjfxp.jpg",
   ]);
 
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -98,15 +92,15 @@ const Carousel: React.FC<CarouselProps> = ({ autoPlayInterval = 3000 }) => {
         &#10094;
       </button>
       <div className={styles["carousel-image-container"]}>
-        <Image
-          src={images[currentIndex]}
-          alt={`Slide ${currentIndex}`}
-          className={styles["carousel-image"]}
-          width={800} // specify an appropriate width
-          height={400} // specify an appropriate height
-          // Alternatively, you can use layout="responsive" for fluid images
-          //layout="responsive"
-          //objectFit="cover" // or another value as needed
+        <div className={styles["carousel-image-container-overlay"]}>
+              <h1>VirtuTour</h1>
+        </div>
+        <Viewer360
+          imageUrl={images[currentIndex]}
+          controlsTheme="dark" // optional: 'light' or 'dark'
+          showControls={false} // optional
+          initialAutoRotate={true} // optional
+          initialEnableZoom={false} // optional
         />
       </div>
       <button
