@@ -18,14 +18,16 @@ interface Viewer360Props {
   controlsTheme?: "light" | "dark";
   showControls?: boolean;
   initialAutoRotate?: boolean;
+  initialEnableZoom?: boolean;
 }
 
 const Viewer360: React.FC<Viewer360Props> = ({
   imageUrl,
-  height = "400px",
+  height = "550px",
   controlsTheme = "light",
   showControls = true,
   initialAutoRotate = false,
+  initialEnableZoom = true,
 }) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -110,12 +112,12 @@ const Viewer360: React.FC<Viewer360Props> = ({
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
     controls.rotateSpeed = 0.5;
-    controls.enableZoom = true;
-    controls.minDistance = 300;
-    controls.maxDistance = 700;
+    controls.enableZoom = initialEnableZoom;
+    controls.minDistance = 100;
+    controls.maxDistance = 400;
     controls.maxPolarAngle = Math.PI;
     controls.minPolarAngle = 0;
-    controls.enablePan = false;
+    controls.enablePan = true;
     controls.autoRotate = initialAutoRotate;
     controls.autoRotateSpeed = 0.5;
 
