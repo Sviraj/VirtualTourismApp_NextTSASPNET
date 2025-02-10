@@ -1,0 +1,135 @@
+.image360-container{
+    margin-top: 58px;
+}
+
+.photo-gallery-container {
+    padding: 0.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .gallery-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .photo-card {
+    height: 300px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .photo-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .photo-content {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 90%; /* 4:3 Aspect ratio */
+  }
+  
+  .photo-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .icon-360 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .views-count {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    z-index: 1;
+    font-size: 0.9rem;
+  }
+  
+  .photo-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 20px 15px;
+    color: white;
+  }
+  
+  .photo-title h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  
+  .see-all-button {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .see-all-button button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .see-all-button button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .photo-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+  
+    .gallery-title {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .photo-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .photo-gallery-container {
+      padding: 1rem;
+    }
+  }

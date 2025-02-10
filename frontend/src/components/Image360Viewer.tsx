@@ -22,7 +22,7 @@ interface Viewer360Props {
 
 const Viewer360: React.FC<Viewer360Props> = ({
   imageUrl,
-  height = "600px",
+  height = "400px",
   controlsTheme = "light",
   showControls = true,
   initialAutoRotate = false,
