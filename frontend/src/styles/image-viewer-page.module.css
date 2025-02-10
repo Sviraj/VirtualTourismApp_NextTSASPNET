@@ -1,0 +1,25 @@
+.container {
+  margin-top: 59px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.viewer-container {
+  cursor: grab;
+}
+
+.viewer-container:active {
+  cursor: grabbing;
+}
+
+.button {
+    padding: 10px;
+    margin-left:1400px;
+    width: 120px;
+    background-color: blueviolet;
+}

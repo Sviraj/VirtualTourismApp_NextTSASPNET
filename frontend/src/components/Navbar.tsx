@@ -4,9 +4,9 @@ import Image from "next/image";
 import profileImage from "../images/profile.png";
 import styles from "../styles/Navbar.module.css";
 import TypingLoop from "./Typingloop";
+import { Globe } from "lucide-react";
 
-const Navbar: React.FC = ({
-}) => {
+const Navbar: React.FC = ({}) => {
   const router = useRouter();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -34,17 +34,18 @@ const Navbar: React.FC = ({
 
   const onPhotoClick = () => {
     router.push("/image360page");
-  }
+  };
   const onVideoClick = () => {
-    router.push("/video-viewer");
-  }
+    router.push("/video360page");
+  };
   const onPhotoGalleryClick = () => {
     router.push("/photo-gallery");
-  }
+  };
 
   return (
     <nav className={styles["navbar"]}>
-      <div className={styles["navbar-logo"]}>
+      <div className={styles["navbar-logo"]} onClick={() => router.push("/")}>
+        <Globe size={32} />
         <div>
           <TypingLoop text="Virtual-Tourism" speed={400} />
         </div>
