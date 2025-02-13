@@ -43,7 +43,7 @@ const Navbar: React.FC = ({}) => {
     router.push("/video360page");
   };
   const onPhotoGalleryClick = () => {
-    router.push("/photo-gallery");
+    router.push("/photogallerypage");
   };
 
   return (
