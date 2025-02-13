@@ -41,7 +41,7 @@ const ImageSlider: React.FC = () => {
               <div className={styles["description"]}>
                 <p>{photo.description}</p>
               </div>
-              <button>See More</button>
+              <button className={styles["content-button"]}>See More</button>
             </div>
           </div>
         ))}

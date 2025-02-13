@@ -14,6 +14,7 @@ const Navbar: React.FC = ({}) => {
   // Check if the current route is '/360image'
   const is360ImageActive = router.pathname === "/image360page";
   const is360VideoActive = router.pathname === "/video360page";
+  const isPhotoGalleryActive = router.pathname === "/photogallerypage";
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -78,7 +79,9 @@ const Navbar: React.FC = ({}) => {
         </li>
         <li>
           <button
-            className={styles["navigation-btn"]}
+            className={`${styles["navigation-btn"]} ${
+              isPhotoGalleryActive ? styles["active"] : ""
+            }`}
             onClick={onPhotoGalleryClick}
           >
             Photogallery

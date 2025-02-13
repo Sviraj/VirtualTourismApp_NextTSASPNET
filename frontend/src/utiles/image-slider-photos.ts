@@ -10,7 +10,7 @@ export const imageSliderPhotos: ImageSliderPhoto[] = [
     id: 1,
     name: "Andaman Islands",
     description:
-      " The Adobe Stock collection features a dazzling range of nature stock photos for any print",
+      "  nature stock photos for any print",
     imageUrl:
       "https://images.unsplash.com/photo-1618886487325-f665032b6352?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bmF0dXJlJTIwaW1hZ2VzfGVufDB8fDB8fHww",
   },
@@ -25,7 +25,7 @@ export const imageSliderPhotos: ImageSliderPhoto[] = [
     id: 3,
     name: "Canyons in Kazakhstan",
     description:
-      " The Adobe Stock collection features a dazzling range of nature stock photos for any print",
+      "  range of nature stock photos for any print",
     imageUrl:
       "https://t4.ftcdn.net/jpg/02/07/01/99/240_F_207019997_b0NsUaexcVMMSheib1Tp8o9Qi08C8daZ.jpg",
   },
@@ -40,7 +40,7 @@ export const imageSliderPhotos: ImageSliderPhoto[] = [
     id: 5,
     name: "Paradise Islands",
     description:
-      " The Adobe Stock collection features a dazzling range of nature stock photos for any print",
+      " The Adobe Stock collection features",
     imageUrl:
       "https://t4.ftcdn.net/jpg/00/72/13/53/240_F_72135354_bBCoyhEY9OTz84g83vKbHyitNNNP7bQY.jpg",
   },
