@@ -4,7 +4,7 @@
   top: 0;
   width: 100%;
   /* With border-box applied globally, padding is included in the width */
-  z-index: 400; /* Lower than dropdown's z-index */
+  z-index: 401; /* Lower than dropdown's z-index */
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;

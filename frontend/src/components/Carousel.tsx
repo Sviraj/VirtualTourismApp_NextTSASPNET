@@ -8,9 +8,11 @@ interface CarouselProps {
 
 const Carousel: React.FC<CarouselProps> = ({ autoPlayInterval = 5000 }) => {
   const [images] = useState<string[]>([
-    "https://as2.ftcdn.net/v2/jpg/05/00/13/57/1000_F_500135749_Cl1dMNuH7DpSP7kDaHQxIpeQqo8w5n0E.jpg",
-    "https://as1.ftcdn.net/v2/jpg/01/24/53/86/1000_F_124538688_amRnfhQENBJxMOoOfxP9nUaB3p0phHu7.jpg",
+    "https://t3.ftcdn.net/jpg/04/96/33/28/240_F_496332871_6AHFHGSxsLzGIBGarXYN6tyiyf1VFeVp.jpg",
+    "https://t3.ftcdn.net/jpg/02/22/96/30/240_F_222963012_Dq6NSrRUfscMnB3FclNNqmws3TGoL21P.jpg",
     "https://as2.ftcdn.net/v2/jpg/02/86/08/85/1000_F_286088509_GZFeghJcoPjVCLotBR5AgDi3pf1Fjfxp.jpg",
+    "https://t4.ftcdn.net/jpg/05/17/77/55/240_F_517775514_2gNFycX0B8eXBFp5QUSiQGFPXOmhuc79.jpg",
+    "https://t3.ftcdn.net/jpg/02/08/48/68/240_F_208486829_9Zf0XvJq5IQTWPf9kcJPes4dOWWMXlNX.jpg"
   ]);
 
   const [currentIndex, setCurrentIndex] = useState<number>(0);
