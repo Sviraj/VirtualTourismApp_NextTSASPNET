@@ -31,7 +31,7 @@ const VideoPage360: React.FC = () => {
       },
       {
         id: 3,
-        title: "The Charyn and the Lunar Canyons in Kazakhstan",
+        title: "The Kazakhstan",
         views: "4,781",
         imageUrl:
           "https://as2.ftcdn.net/v2/jpg/02/86/08/85/1000_F_286088509_GZFeghJcoPjVCLotBR5AgDi3pf1Fjfxp.jpg",
