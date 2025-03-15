@@ -32,7 +32,7 @@ namespace VirualTourismApp.Services.Core.Services
                 IsBodyHtml = true
             };
             mailMessage.To.Add(toEmail);
-
+            // email service handles the email sending
             await smtpClient.SendMailAsync(mailMessage);
         }
     }
