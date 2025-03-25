@@ -15,6 +15,8 @@ const Navbar: React.FC = ({}) => {
   const is360ImageActive = router.pathname === "/image360page";
   const is360VideoActive = router.pathname === "/video360page";
   const isPhotoGalleryActive = router.pathname === "/photogallerypage";
+  const isHistoricalActive = router.pathname === "/historical-page";
+  const isInvestmentActive = router.pathname === "/investment-page";
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -46,6 +48,12 @@ const Navbar: React.FC = ({}) => {
   const onPhotoGalleryClick = () => {
     router.push("/photogallerypage");
   };
+  const onHistoricalClick = () => {
+    router.push("/historical-page");
+  };
+  const onInvestmentClick = () => {
+    router.push("/investment-page");
+  };
 
   return (
     <nav className={styles["navbar"]}>
@@ -64,7 +72,7 @@ const Navbar: React.FC = ({}) => {
             }`}
             onClick={onPhotoClick}
           >
-            360 Photo
+            Virtual Tour
           </button>
         </li>
         <li>
@@ -74,7 +82,7 @@ const Navbar: React.FC = ({}) => {
             }`}
             onClick={onVideoClick}
           >
-            360 Video
+            Technical Details
           </button>
         </li>
         <li>
@@ -84,7 +92,27 @@ const Navbar: React.FC = ({}) => {
             }`}
             onClick={onPhotoGalleryClick}
           >
-            Photogallery
+            Services
+          </button>
+        </li>
+        <li>
+          <button
+            className={`${styles["navigation-btn"]} ${
+              isHistoricalActive ? styles["active"] : ""
+            }`}
+            onClick={onHistoricalClick}
+          >
+            Historological Technology
+          </button>
+        </li>
+        <li>
+          <button
+            className={`${styles["navigation-btn"]} ${
+              isInvestmentActive ? styles["active"] : ""
+            }`}
+            onClick={onInvestmentClick}
+          >
+            Investments
           </button>
         </li>
       </ul>
