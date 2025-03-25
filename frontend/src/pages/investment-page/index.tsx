@@ -18,7 +18,7 @@ const PhotogalleryPage: React.FC = () => {
               ))}
               <div className={styles["photo-count"]}>3423 photos</div>
               <div className={styles["background-text"]}>
-                Best arial panoroma photos
+                Best arial panoroma photos view
               </div>
             </div>
           </div>
