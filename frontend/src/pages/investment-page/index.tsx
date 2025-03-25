@@ -1,19 +1,31 @@
-import React from "react";
-import styles from "../../styles/Video360page.module.css";
+import styles from "../../styles/photogallerypage.module.css";
+import ImageSlider from "@/components/ImageSlider";
+import { imageSliderPhotosGallery } from "@/utiles/image-slider-photosGallery";
 
-const VideoPage360: React.FC = () => {
+const PhotogalleryPage: React.FC = () => {
   return (
-    <div className={styles["video360-container"]}>
-      <div className={styles["video-content"]}>
-        <h1 className={styles["gallery-title"]}>Historical Presarvation</h1>
-        <video 
-          src={`https://drive.google.com/uc?export=download&id=1Ff4nzRo3E_z37zrY5GpSWJSb7NZl8p5C`} 
-          className={styles["video-element"]} 
-          controls 
-        />
+    <div className={styles["container"]}>
+      <ImageSlider />
+
+      <div className={styles["photo-grid"]}>
+        {imageSliderPhotosGallery.map((group, groupIndex) => (
+          <div key={groupIndex}>
+            <div className={styles["photo-card"]}>
+              {group.map((photo) => (
+                <div key={photo.id} className={styles["photo-cardp"]}>
+                  <img src={photo.imageUrl} />
+                </div>
+              ))}
+              <div className={styles["photo-count"]}>3423 photos</div>
+              <div className={styles["background-text"]}>
+                Best arial panoroma photos view
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
-export default VideoPage360;
+export default PhotogalleryPage;
