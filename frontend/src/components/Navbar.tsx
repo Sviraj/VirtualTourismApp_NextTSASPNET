@@ -112,7 +112,7 @@ const Navbar: React.FC = ({}) => {
             }`}
             onClick={onInvestmentClick}
           >
-            Investments
+            PhotoGallery
           </button>
         </li>
       </ul>
