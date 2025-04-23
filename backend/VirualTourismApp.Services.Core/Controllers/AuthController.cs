@@ -62,7 +62,6 @@ namespace VirualTourismApp.Services.Core.Controllers
         {
             try
             {
-                // Check if the input model is valid
                 if (model == null || string.IsNullOrWhiteSpace(model.Username) || string.IsNullOrWhiteSpace(model.Password))
                 {
                     return BadRequest(new { Message = "Invalid request. Username and password are required." });
