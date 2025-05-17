@@ -45,7 +45,9 @@ namespace VirualTourismApp.Services.Core.Controllers
 
             if (!IsValidEmail(model.Username))
             {
+                _logger.LogError("An error occurred during {Action}: {Message}", nameof(Login));
                 return BadRequest("Invalid email format.");
+
             }
 
             var user = new IdentityUser { UserName = model.Username };
